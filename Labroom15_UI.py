@@ -3,25 +3,21 @@ from tkinter import filedialog, messagebox
 from PIL import Image, ImageTk
 import Labroom15_core as engine
 
-# Hàm xử lý
 
 def ui_detect():
     if not image_path:
         messagebox.showwarning("Lỗi", "Vui lòng chọn ảnh")
         return
     
-    # 1. Xóa nội dung cũ trong khung Text (từ dòng 1, ký tự 0 đến hết)
     khungKQ.delete("1.0", tk.END)
     khungKQ.insert(tk.END, "Đang đọc...")
     root.update()
 
-    # 2. Gọi engine xử lý
     plate = engine.process_image(image_path)
 
-    # 3. Hiển thị kết quả vào khungKQ
-    khungKQ.delete("1.0", tk.END) # Xóa chữ "Đang đọc..."
+    khungKQ.delete("1.0", tk.END) 
     if plate:
-        khungKQ.insert(tk.END, plate) # Chèn kết quả biển số vào
+        khungKQ.insert(tk.END, plate) 
     else:
         khungKQ.insert(tk.END, "Không tìm thấy!")
 
@@ -31,12 +27,12 @@ def open_image():
     if not image_path: return
     
     img = Image.open(image_path)
-    img.thumbnail((800,500)) # Giữ tỷ lệ ảnh
+    img.thumbnail((800,500)) 
     img_tk = ImageTk.PhotoImage(img)
     khung.config(image=img_tk)
     khung.image = img_tk
 
-# KHU VỰC THIẾT KẾ GIAO DIỆN 
+#KHU VỰC THIẾT KẾ GIAO DIỆN
 root = tk.Tk()
 root.title("ALPR System")
 root.geometry("1920x1080")
@@ -48,8 +44,6 @@ image_path = ""
 header =tk.Label(root, text="NHẬN DIỆN BIỂN SỐ XE", font=("Cascadia Code", 50, "bold"), fg="blue", bg="white").place(x=80, y=60)
 
 # Nút chọn ảnh
-
-
 nuttal=tk.Button(root, text="+", command=open_image, font=("Cascadia Code", 35, "bold"),relief="flat", bg="blue", fg="white", width=5,cursor="hand2")
 nuttal.place(x=1100, y=200)
 
