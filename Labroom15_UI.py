@@ -41,21 +41,21 @@ root.configure(bg="white")
 image_path = ""
 
 # Tiêu đề
-header =tk.Label(root, text="NHẬN DIỆN BIỂN SỐ XE", font=("Cascadia Code", 50, "bold"), fg="blue", bg="white").place(x=80, y=60)
+header =tk.Label(root, text="NHẬN DIỆN BIỂN SỐ XE", font=("Cascadia Code", 50, "bold"), fg="#0c5c91", bg="white").place(x=80, y=60)
 
 # Nút chọn ảnh
-nuttal=tk.Button(root, text="+", command=open_image, font=("Cascadia Code", 35, "bold"),relief="flat", bg="blue", fg="white", width=5,cursor="hand2")
+nuttal=tk.Button(root, text="+", command=open_image, font=("Cascadia Code", 35, "bold"),relief="flat", bg="#0c5c91", fg="white", width=5,cursor="hand2")
 nuttal.place(x=1100, y=200)
 
-nutdoc=tk.Button(root, text="Đọc", command=ui_detect, bg="blue", fg="white", font=("Cascadia Code", 35, "bold"), width=5,relief="flat",cursor="hand2")
+nutdoc=tk.Button(root, text="Đọc", command=ui_detect, bg="#27ae60", fg="white", font=("Cascadia Code", 35, "bold"), width=5,relief="flat",cursor="hand2")
 nutdoc.place(x=1100, y=320)
 
 # Khung hiển thị ảnh
-khung = tk.Label(root, bg="lightgray", bd=0, relief="sunken", highlightthickness=0)
+khung = tk.Label(root, bg="#e9ebf7", bd=0, relief="sunken", highlightthickness=0)
 khung.place(relx=0.4, rely=0.55, width=800, height=500, anchor="center")
 
 # Khung hiển thị kết quả
-tieudeKQ = tk.Label(root, text="Kết quả: ", font=("Cascadia Code", 11), bg="white")
+tieudeKQ = tk.Label(root, text="Kết quả: ", font=("Cascadia Code", 11), bg="#e9ebf7")
 tieudeKQ.place(x=1100, y=460)
 khungKQ = tk.Text(root,bd=1,relief="solid",bg="white",font=("Consolas", 30, "bold"),width=13,height=2)
 khungKQ.place(x=1100, y=490, width=350, height=150)
